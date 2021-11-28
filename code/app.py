@@ -14,7 +14,7 @@ def healthz():
 @app.route('/', methods= ['GET'])
 def home():
     bashCommandName = "hostname"
-    data = "Hello from hostname"
+    data = "Hello from hostname cicd"
     resp = jsonify(data)
     resp.status_code = 200
     return resp
