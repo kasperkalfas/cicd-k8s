@@ -14,7 +14,8 @@ def healthz():
 @app.route('/', methods= ['GET'])
 def home():
     bashCommandName = "hostname"
-    data = "Hello from hostname cicd"
+    output = subprocess.check_output(bashCommandName, shell=True).decode('utf-8')
+    data = "Hello CloudState from hostname: " + output
     resp = jsonify(data)
     resp.status_code = 200
     return resp
